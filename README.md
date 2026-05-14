@@ -1,20 +1,21 @@
-# Status Bar Snake
+# Status Bar Games
 
-A tiny VS Code status bar snake game for short coding breaks.
+Mini-arcade games that run entirely in your VS Code status bar. No WebViews, no large panels — just quick fun for short coding breaks.
 
-## Features
+## Games
 
-- Plays entirely in the VS Code status bar; no WebView or large editor panel.
-- Start, pause, reset, and steer with commands or keyboard shortcuts.
-- Tooltip shows the full board when the status bar is too narrow.
-- Keeps all state local and does not collect or transmit user data.
+| Game | Description | Controls |
+|------|-------------|----------|
+| **Snake** | Classic snake. Eat food, grow, avoid walls and yourself. | Arrow keys to steer |
+| **Dino** | Chrome-inspired dinosaur runner. Jump over cacti, score rises over time. | Up / Jump to avoid obstacles |
 
 ## Controls
 
 | Action | Windows / Linux | macOS |
-| --- | --- | --- |
+|--------|-----------------|-------|
+| Switch game | `Alt+G` | `Option+G` |
 | Start / Pause | `Alt+S` | `Option+S` |
-| Up | `Alt+Up` | `Option+Up` |
+| Up / Jump | `Alt+Up` | `Option+Up` |
 | Down | `Alt+Down` | `Option+Down` |
 | Left | `Alt+Left` | `Option+Left` |
 | Right | `Alt+Right` | `Option+Right` |
@@ -22,12 +23,21 @@ A tiny VS Code status bar snake game for short coding breaks.
 
 ## Commands
 
-- `Status Snake: Start / Pause`
-- `Status Snake: Reset`
-- `Status Snake: Up`
-- `Status Snake: Down`
-- `Status Snake: Left`
-- `Status Snake: Right`
+- `Status Games: Switch Game` — pick a game from a quick-pick list
+- `Status Games: Start / Pause`
+- `Status Games: Reset`
+- `Status Games: Up / Jump`
+- `Status Games: Down`
+- `Status Games: Left`
+- `Status Games: Right`
+
+## Architecture
+
+Adding a new game:
+
+1. Create a class in `src/games/<your-game>/` that implements `MiniGame` (see `src/games/game.ts`).
+2. Instantiate it in `src/extension.ts` and pass it to the `GameManager`.
+3. The game receives `onCommand()` calls and provides `getStatusText()` / `getTooltip()` for rendering.
 
 ## Development
 
@@ -37,3 +47,7 @@ npm run compile
 ```
 
 To test manually, press `F5` in VS Code to launch an Extension Development Host.
+
+## License
+
+MIT
