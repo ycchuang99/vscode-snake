@@ -1,9 +1,9 @@
 {
-  "name": "status-bar-snake",
-  "displayName": "Status Bar Snake",
-  "description": "A tiny status bar snake game for short coding breaks.",
-  "version": "0.0.1",
-  "publisher": "status-snake",
+  "name": "status-bar-games",
+  "displayName": "Status Bar Games",
+  "description": "Mini-arcade games that run in your VS Code status bar.",
+  "version": "0.1.0",
+  "publisher": "status-games",
   "license": "MIT",
   "engines": {
     "vscode": "^1.90.0"
@@ -13,69 +13,79 @@
   ],
   "activationEvents": [
     "onStartupFinished",
-    "onCommand:statusSnake.toggle",
-    "onCommand:statusSnake.up",
-    "onCommand:statusSnake.down",
-    "onCommand:statusSnake.left",
-    "onCommand:statusSnake.right",
-    "onCommand:statusSnake.reset"
+    "onCommand:statusGames.switch",
+    "onCommand:statusGames.toggle",
+    "onCommand:statusGames.reset",
+    "onCommand:statusGames.up",
+    "onCommand:statusGames.down",
+    "onCommand:statusGames.left",
+    "onCommand:statusGames.right"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "statusSnake.toggle",
-        "title": "Status Snake: Start / Pause"
+        "command": "statusGames.switch",
+        "title": "Status Games: Switch Game"
       },
       {
-        "command": "statusSnake.reset",
-        "title": "Status Snake: Reset"
+        "command": "statusGames.toggle",
+        "title": "Status Games: Start / Pause"
       },
       {
-        "command": "statusSnake.up",
-        "title": "Status Snake: Up"
+        "command": "statusGames.reset",
+        "title": "Status Games: Reset"
       },
       {
-        "command": "statusSnake.down",
-        "title": "Status Snake: Down"
+        "command": "statusGames.up",
+        "title": "Status Games: Up / Jump"
       },
       {
-        "command": "statusSnake.left",
-        "title": "Status Snake: Left"
+        "command": "statusGames.down",
+        "title": "Status Games: Down"
       },
       {
-        "command": "statusSnake.right",
-        "title": "Status Snake: Right"
+        "command": "statusGames.left",
+        "title": "Status Games: Left"
+      },
+      {
+        "command": "statusGames.right",
+        "title": "Status Games: Right"
       }
     ],
     "keybindings": [
       {
-        "command": "statusSnake.toggle",
+        "command": "statusGames.switch",
+        "key": "alt+g",
+        "mac": "alt+g"
+      },
+      {
+        "command": "statusGames.toggle",
         "key": "alt+s",
         "mac": "alt+s"
       },
       {
-        "command": "statusSnake.up",
+        "command": "statusGames.up",
         "key": "alt+up",
         "mac": "alt+up"
       },
       {
-        "command": "statusSnake.down",
+        "command": "statusGames.down",
         "key": "alt+down",
         "mac": "alt+down"
       },
       {
-        "command": "statusSnake.left",
+        "command": "statusGames.left",
         "key": "alt+left",
         "mac": "alt+left"
       },
       {
-        "command": "statusSnake.right",
+        "command": "statusGames.right",
         "key": "alt+right",
         "mac": "alt+right"
       },
       {
-        "command": "statusSnake.reset",
+        "command": "statusGames.reset",
         "key": "alt+r",
         "mac": "alt+r"
       }
