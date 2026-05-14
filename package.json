@@ -1,0 +1,92 @@
+{
+  "name": "status-bar-snake",
+  "displayName": "Status Bar Snake",
+  "description": "A tiny status bar snake game for short coding breaks.",
+  "version": "0.0.1",
+  "publisher": "status-snake",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:statusSnake.toggle",
+    "onCommand:statusSnake.up",
+    "onCommand:statusSnake.down",
+    "onCommand:statusSnake.left",
+    "onCommand:statusSnake.right",
+    "onCommand:statusSnake.reset"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "statusSnake.toggle",
+        "title": "Status Snake: Start / Pause"
+      },
+      {
+        "command": "statusSnake.reset",
+        "title": "Status Snake: Reset"
+      },
+      {
+        "command": "statusSnake.up",
+        "title": "Status Snake: Up"
+      },
+      {
+        "command": "statusSnake.down",
+        "title": "Status Snake: Down"
+      },
+      {
+        "command": "statusSnake.left",
+        "title": "Status Snake: Left"
+      },
+      {
+        "command": "statusSnake.right",
+        "title": "Status Snake: Right"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "statusSnake.toggle",
+        "key": "alt+s",
+        "mac": "alt+s"
+      },
+      {
+        "command": "statusSnake.up",
+        "key": "alt+up",
+        "mac": "alt+up"
+      },
+      {
+        "command": "statusSnake.down",
+        "key": "alt+down",
+        "mac": "alt+down"
+      },
+      {
+        "command": "statusSnake.left",
+        "key": "alt+left",
+        "mac": "alt+left"
+      },
+      {
+        "command": "statusSnake.right",
+        "key": "alt+right",
+        "mac": "alt+right"
+      },
+      {
+        "command": "statusSnake.reset",
+        "key": "alt+r",
+        "mac": "alt+r"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
